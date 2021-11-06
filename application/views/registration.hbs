@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/css/registration.css">
+	<script defer type="text/javascript" src="../public/css/registration.css"></script>
+    <title>Registration</title>
+</head>
+<body>
+<section>
+    <header class="grid-container">
+        <h1>Registration Form</h1>
+    </header>
+    <form id="myForm" action="#" method="POST">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="Enter Username...">
+        <div class="error" id="errUsername"><br><br></div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter Email..." required>
+        <div class="error" id="errEmail"><br><br></div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter Password...">
+        <div class="error" id="errPwd"><br><br></div>
+        <label for="cPassword">Confirm password</label>
+        <input type="password" name="cPassword" id="cPassword" placeholder="Confirm Password...">
+        <div class="error" id="errCPwd"><br><br></div>
+
+        <label class="long" for="over13ys">
+            <input type="checkbox" name="over13ys" id="over13ys" required>
+            I am 13 years of age or older</label>
+        <label class="long" for="privicyrule">
+            <input type="checkbox" name="privicyrule" id="privicyrule" required>
+            I accept <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Rules</a></label>
+        <div class="error" id="errChecks"><br><br></div>
+        <button type="button" id="submitBtn">submit</button>
+    </form>
+</section>
+</body>
+</html>

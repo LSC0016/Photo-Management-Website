@@ -7,3 +7,19 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'login'});
+});
+
+router.get('/registration', function(req, res, next) {
+  res.render('registration', { title: 'registration'});
+});
+
+router.get('/postimage', function(req, res, next) {
+  res.render('postimage', { title: 'postimage'});
+});
+
+router.get('/viewpost', function(req, res, next) {
+  res.render('viewpost', { title: 'viewpost'});
+});
