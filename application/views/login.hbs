@@ -12,13 +12,16 @@
         <header>
             <h1>Login Form</h1>
         </header>
-        <form class="form">
+        <form class="form" id="login-form" method="POST" action="/users/login" 
+    enctype="application/x-www-form-urlencoded">
             <label for="name">Enter Username</label>
-            <input type="text" name="name" placeholder="Enter Username">
+            <input type="text" placeholder="username"
+            required name="username">
             <br>
             <br>
             <label for="password">Enter Password </label>
-            <input type="password" name="password" placeholder="Enter Password">
+            <input type="password" placeholder="password"
+            required name="password">
             <br>
             <br>
             <br>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../public/css/registration.css">
-	<script defer type="text/javascript" src="../public/css/registration.css"></script>
+    <script defer type="text/javascript" src="../public/js/registration.js"></script>
     <title>Registration</title>
 </head>
 <body>
@@ -13,18 +13,20 @@
     <header class="grid-container">
         <h1>Registration Form</h1>
     </header>
-    <form id="myForm" action="#" method="POST">
+    <form class="form-grid-reg" id="myForm" method="POST" action="/users/registration" 
+    enctype="application/x-www-form-urlencoded">
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" placeholder="Enter Username...">
+        <input type="text" name="username" id="username" placeholder="Enter Username..."
+        required name="username">
         <div class="error" id="errUsername"><br><br></div>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" placeholder="Enter Email..." required>
         <div class="error" id="errEmail"><br><br></div>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="Enter Password...">
+        <input type="password" name="password" id="password" placeholder="Enter Password..." required>
         <div class="error" id="errPwd"><br><br></div>
         <label for="cPassword">Confirm password</label>
-        <input type="password" name="cPassword" id="cPassword" placeholder="Confirm Password...">
+        <input type="password" name="cPassword" id="cPassword" placeholder="Confirm Password..." required>
         <div class="error" id="errCPwd"><br><br></div>
 
         <label class="long" for="over13ys">
@@ -34,7 +36,7 @@
             <input type="checkbox" name="privicyrule" id="privicyrule" required>
             I accept <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Rules</a></label>
         <div class="error" id="errChecks"><br><br></div>
-        <button type="button" id="submitBtn">submit</button>
+        <button type="submit" id="submitBtn">submit</button>
     </form>
 </section>
 </body>

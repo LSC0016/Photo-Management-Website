@@ -180,12 +180,14 @@ function vUsername(str, display = true) {
     }
   });
   
+  
   // submit button 
   submitBtn.addEventListener('click', function () {
     errChecks.innerHTML = '<br><br>';
     if (vUsername(username.value, false) && vEmail(email.value, false) && vPassword(pwd.value, false) && vCPassword(cPwd.value, false) && over13ys.checked && privicyrule.checked) {
-      alert('submit');
-      myForm.submit();
+      //alert('submit');
+      //myForm.submit();
+      res.redirect('/login');
     }
     else if (!over13ys.checked && !privicyrule.checked) {
       errChecks.innerHTML = `

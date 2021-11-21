@@ -1,0 +1,23 @@
+<header>
+        <nav id="nav-bar">
+            <ul>
+                <div id="brand" class="nav-items">
+                    <a href="/" id="brand-anchor"><span id="brand-text">
+                        <i style="margin-right: 2.rem;">Home</i></span></a>
+                </div>
+                    <li> <input id="search-text" , name="serach-text" type="text"> </li>
+                    {{!-- <li> <a href="/index" id="home">Home</a> </li> --}}
+                    <li> <a href="/postImage" id="post-button" class="nav-items anchor-buttons">Post</a> </li>
+                    {{#if logged}}
+                    <li> <a href="/users/logout" id="logout-button" class="nav-items anchor-buttons">Log Out</a> </li>
+                    {{else}}
+                    <li> <a href="/login" id="login-button" class="nav-items anchor-buttons">Log In</a> </li>
+                    {{/if}}
+                    <li> <a href="/register" id="authenticate-button" class="nav-items anchor-buttons">Register</a>
+                    </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div id="main-content">
+</div>
