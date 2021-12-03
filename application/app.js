@@ -14,6 +14,8 @@ const app = express();
 
 var sessions = require('express-session');
 var mysqlSession = require('express-mysql-session')(sessions);
+var flash = require('express-flash');
+
 
 // promise base syntax
 
@@ -44,6 +46,8 @@ var mysqlSessionStore = new mysqlSession(
     resave: false,
     saveUninitialized: false,
   }));
+
+  app.use(flash());
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

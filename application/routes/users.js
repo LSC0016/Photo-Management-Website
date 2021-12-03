@@ -9,9 +9,9 @@ var bcrypt = require('bcrypt');
 
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// router.get('/', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
 
 router.post('/registration', (req, res, next) => {
   let username = req.body.username;
@@ -114,7 +114,7 @@ router.post('/login', (req, res, next) => {
       errorPrint("user login failed");
       if (err instanceof UserError) {
         errorPrint(err.getMessage());
-        // req.flash('error', err.getMessage());
+        req.flash('error', err.getMessage());
         res.status(err.getStatus());
         res.redirect('/login');
       } else {
