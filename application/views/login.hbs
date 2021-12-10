@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../public/css/login_style.css">
-    <title>Login</title>
-</head>
+
 <body>
-    <section class="gird-container">
+    <section class="grid-container">
         <header>
             <h1>Login Form</h1>
         </header>
         <form class="form" id="login-form" method="POST" action="/users/login" 
-    enctype="application/x-www-form-urlencoded">
-            <label for="name">Enter Username</label>
-            <input type="text" placeholder="username"
-            required name="username">
+        enctype="application/x-www-form-urlencoded">
+            <div class="grid-container">
+                <label for="name">Enter Username</label>
+                <input type="text" placeholder="username" required name="username">
+			    <br>
+                <label for="password">Enter Password </label>
+                <input type="password" placeholder="password" required name="password">
             <br>
-            <br>
-            <label for="password">Enter Password </label>
-            <input type="password" placeholder="password"
-            required name="password">
-            <br>
-            <br>
-            <br>
-            <br>
+            </div>
             <button type="submit">submit</button>
         </form>
     </section>

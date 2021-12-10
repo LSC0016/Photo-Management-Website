@@ -7,6 +7,8 @@ const logger = require("morgan");
 const handlebars = require("express-handlebars");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+var postsRouter = require("./routes/posts");
+var commentRouter = require('./routes/comments');
 
 // const db = require("./conf/database");
 // const mysql =require('mysql2');
@@ -15,6 +17,7 @@ const app = express();
 var sessions = require('express-session');
 var mysqlSession = require('express-mysql-session')(sessions);
 var flash = require('express-flash');
+const { requestPrint } = require("./helpers/debug/debugprinters");
 
 
 // promise base syntax
@@ -39,15 +42,15 @@ var mysqlSessionStore = new mysqlSession(
   {/** using default options */}, 
   require('./conf/database'));
 
-  app.use(sessions({
-    key: "csid",
-    secret: "this is a secret from csc317",
-    store: mysqlSessionStore,
-    resave: false,
-    saveUninitialized: false,
-  }));
+app.use(sessions({
+  key: "csid",
+  secret: "this is a secret from csc317",
+  store: mysqlSessionStore,
+  resave: false,
+  saveUninitialized: false,
+}));
 
-  app.use(flash());
+app.use(flash());
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -63,6 +66,11 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use((req, res, next) => {
+  requestPrint(req.url);
+  next();
+});
+
+app.use((req, res, next) => {
   console.log(req.session);
   if(req.session.username){
     res.locals.logged = true;
@@ -72,6 +80,8 @@ app.use((req, res, next) => {
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
+app.use("/posts", postsRouter);
+app.use('/comments', commentRouter);
 
 
 /**

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "proj-init": "./conf/csc317db.sql",
     "start": "nodemon ./bin/www",
     "builddb": "node ./bin/dbloader",
     "grade": "npm i && node ./bin/dbloader  && nodemon ./bin/www"
@@ -19,9 +20,11 @@
     "express-session": "^1.17.2",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "multer": "^1.4.3",
     "mysql2": "^2.3.3",
     "node-pre-gyp": "^0.17.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "sharp": "^0.29.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.9"
