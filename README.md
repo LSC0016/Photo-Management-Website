@@ -9,20 +9,20 @@ Please follow the instructions below and fill in the information requested when 
 
 ## Student Information
 
-|               | Information   |
-|:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+|               | Information         |
+|:-------------:|:-------------:      |
+| Student Name  | Jiayi Gu            |
+| Student ID    | 920024739           |
+| Student Email | jgu3@mail.sfsu.edu  |
 
 
 
 # Build/Run Instructions
 
 ## Build Instructions
-1. steps here
-2. steps here
+1. cd into the correct directory
+2. running npm install
 
 ## Run Instructions
-1. steps here
-2. steps here 
+1. cd into the correct directory
+2. running npm start
