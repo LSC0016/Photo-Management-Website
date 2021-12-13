@@ -47,7 +47,21 @@ const registerValidator = (req, res, next) => {
 }
 
 const loginValidator = (req, res, next) => {
-    
+    let username = req.body.username;
+    let password = req.body.password;
+    if(!checkUsername(username)){
+        req.flash('error', "Your username is not valid!!!");
+        req.session.save(err =>{
+            res.redirect("/login");
+        });
+    }else if(!checkPassword(password)){
+        req.flash('error', "your password is not vaild!!!");
+        req.session.save(err =>{
+            res.redirect("/login");
+        });
+    }else{
+        next();
+    }
 }
 
-module.exports = {registerValidator, loginValidator}
+module.exports = {registerValidator, loginValidator};
