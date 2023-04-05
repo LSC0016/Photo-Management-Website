@@ -11,7 +11,8 @@ const checkUsername = (username) => {
 }
 
 const checkPassword = (password) => {
-    let userPasswordChecker = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    //let userPasswordChecker = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    let userPasswordChecker = /^[0-9a-zA-Z!@#$^]{8,}$/;
     return userPasswordChecker.test(password);
 }
 
@@ -20,30 +21,32 @@ const checkEmail = (email) => {
     return userEmailChecker.test(email);
 }
 
-const registerValidator = (req, res, next) => {
+const registerValidator = (req, res, next) => {   
     let username = req.body.username;
+    let password = req.body.password;
+    let email = req.body.email;
     if(!checkUsername(username)){
         req.flash('error','Invalid Username!!!');
         req.session.save(err => {
             res.redirect("/registration");
         });
-    }else{
-        next();
-    }
-    let password = req.body.password;
-    if(!checkPassword(password)){
+    }else if(!checkPassword(password)){
         req.flash('error', 'Invalid Password!!!');
         req.session.save(err => {
             res.redirect("/registration");
         })
-    }
-    let email = req.body.email;
-    if(!checkEmail(email)){
+    }else if(!checkEmail(email)){
         req.flash('error', 'Invalid Email!!!');
         req.session.save(err => {
             res.redirect("/registration");
         })
+    }else{
+        next();
     }
+    
+    
+    
+    
 }
 
 const loginValidator = (req, res, next) => {

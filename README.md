@@ -11,9 +11,9 @@ Please follow the instructions below and fill in the information requested when 
 
 |               | Information         |
 |:-------------:|:-------------:      |
-| Student Name  | Jiayi Gu            |
-| Student ID    | 920024739           |
-| Student Email | jgu3@mail.sfsu.edu  |
+| Student Name  | Sicheng Liu         |
+| Student ID    | 921585181           |
+| Student Email | sliu24@mail.fsfu.edu|
 
 
 
